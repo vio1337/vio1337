@@ -39,17 +39,17 @@ export const articles: {[title:string]: ArtDetails} = {
 	'React Router' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*gwNAFGfrENqAY0pSixeN3Q.png',
 		link: 'https://medium.com/@violetmoon/react-router-portfolio-template-3105d54f0525',
-		cols: 1,
+		cols: 2,
 	},
 	'I Don\'t Know' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*k62gS8lLuZTtS4KvnoGVGg.jpeg',
-		link: 'medium.com/@violetmoon/i-dont-know-e96e209fd4f9',
-		cols: 1,
+		link: 'https://medium.com/@violetmoon/i-dont-know-e96e209fd4f9',
+		cols: 2,
 	},
 	'JS Promises' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*yUzdM0s16XMy37FpeuGRNw.jpeg',
 		link: 'https://medium.com/@violetmoon/javascript-promises-f4c5625aea1a',
-		cols: 2,
+		cols: 1,
 	},
 	'RESTful Ruby' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*VYSaS5cCKDkMWyWGSZ4z7Q.jpeg',

@@ -37,8 +37,8 @@ class Articles extends Component<Props, State> {
 				<GridList cellHeight={250} className={classes.gridList} cols={4}>
 					{Object.keys(articles).map((a, i)=> (
 						<GridListTile key={i} cols={articles[a].cols || 1}>
-							<a href={articles[a].link}>
-					            <img src={articles[a].img} alt={a} />
+							<a href={articles[a].link} target='_blank'>
+					            <img src={articles[a].img} alt={a} style={{height: '120%'}}/>
 					            <GridListTileBar
 					              title={a}
 					              classes={{root: classes.titleBar, title: classes.title}}

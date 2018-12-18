@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
@@ -19,7 +18,6 @@ const styles = createStyles({
 	},
 	img: {
 		height: 175,
-		filter: 'grayscale(100%)',
 	},
 	title: {
 		fontSize: '1em',
@@ -32,7 +30,7 @@ const styles = createStyles({
 		display: 'flex',
 		flexFlow: 'row nowrap',
 		justifyContent: 'center',
-		backgroundColor: 'lightgoldenrodyellow',
+		backgroundColor: 'rgba(0,0,0,.03)',
 	},
 })
 

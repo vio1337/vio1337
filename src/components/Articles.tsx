@@ -9,14 +9,18 @@ interface Props {classes: any}
 interface State {}
 
 const styles = createStyles({
-
+	cardContainer: {
+		display: 'flex',
+		flexFlow: 'row wrap',
+		justifyContent: 'center',
+	},
 })
 
 class Articles extends Component<Props, State> {
 	render() {
 		const {classes} = this.props
 		return (
-			<div>
+			<div className={classes.cardContainer}>
 				{Object.keys(articles).map((a, i)=> {
 					return <ArticleCard key={i} img={articles[a].img} title={a} link={articles[a].link}/>
 				})}

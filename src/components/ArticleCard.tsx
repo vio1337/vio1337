@@ -10,9 +10,11 @@ const styles = createStyles({
 
 class ArticleCard extends Component<Props, State> {
 	render() {
-		const {classes} = this.props
+		const {classes, img, link, title} = this.props
+		console.log(title)
 		return (
 			<div>
+				
 			</div>
 		)
 	}

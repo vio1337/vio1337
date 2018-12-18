@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 
 interface Props {classes: any, img:string, link:string, title:string}
-interface State {}
+interface State {hover:boolean}
 
 const styles = createStyles({
 	card: {
@@ -21,12 +21,15 @@ const styles = createStyles({
 		backgroundSize: 'cover',
 	},
 	title: {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems:'center',
 		fontSize: '1em',
 		fontFamily: 'Roboto, sans-serif',
 		letterSpacing: 1.5,
 		fontWeight: 600,
-		textAlign: 'center',
-		padding: '30px 0',
+		padding: '30px 0'
+
 	},
 	contentColumn: {
 		display: 'flex',
@@ -44,18 +47,34 @@ const styles = createStyles({
 
 
 class ArticleCard extends Component<Props, State> {
-	handleHover = () => {
-		
-	}
 	
+	state = {
+		hover: false
+	}
+
+	handleOver = () => {
+		this.setState({hover: true})
+	}
+
+	handleLeave = () => {
+		this.setState({hover: false})
+	}
+
 	render() {
 		const {classes, img, link, title} = this.props
 		return (
 			<Card className={classes.card}>
 				<div className={classes.title}>{title}</div>
-				<div className={classes.img} style={{backgroundImage: `url(${img})`}} onHover={this.handleHover}></div>
+				<div className={classes.img} style={{backgroundImage: `url(${img})`}} onMouseOver={this.handleOver} onMouseLeave={this.handleLeave}>
+					{this.state.hover ? 
+						<div className={classes.img} style={{backgroundColor: 'rgba(0,0,0,.8)'}}>
+							<div className={classes.title}>hi bryn this is my secret hover message to you meep</div>
+						</div>
+						: null
+					}
+				</div>
 				<div className={classes.contentColumn}>
-					<Button className={classes.btn} href={link}>Read</Button>
+					<Button className={classes.btn} href={link}>Read Article</Button>
 				</div>
 			</Card>
 		)

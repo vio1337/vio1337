@@ -33,27 +33,32 @@ export const projs: {[title:string]: ProjDetails} = {
 	},
 }
 
-interface ArtDetails {link:string, img:string}
+interface ArtDetails {link:string, img:string, cols:number}
 
 export const articles: {[title:string]: ArtDetails} = {
 	'React Router' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*gwNAFGfrENqAY0pSixeN3Q.png',
 		link: 'https://medium.com/@violetmoon/react-router-portfolio-template-3105d54f0525',
+		cols: 1,
 	},
 	'I Don\'t Know' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*k62gS8lLuZTtS4KvnoGVGg.jpeg',
 		link: 'medium.com/@violetmoon/i-dont-know-e96e209fd4f9',
+		cols: 1,
 	},
 	'JS Promises' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*yUzdM0s16XMy37FpeuGRNw.jpeg',
 		link: 'https://medium.com/@violetmoon/javascript-promises-f4c5625aea1a',
+		cols: 2,
 	},
 	'RESTful Ruby' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*VYSaS5cCKDkMWyWGSZ4z7Q.jpeg',
 		link: 'https://medium.com/@violetmoon/activerecord-rest-and-sinatra-frankenstein-ing-the-internet-3004f656717f',
+		cols: 2,
 	},
 	'ORM + ActiveRecord' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*43TU7StyO3uZP2UFBPkRFQ.gif',
 		link: 'https://medium.com/@violetmoon/understanding-orm-frameworks-with-ruby-and-activerecord-83a9e9d8490e',
+		cols: 1,
 	},
 }

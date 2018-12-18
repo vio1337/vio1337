@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 
 import ProjCard from './ProjCard'
-import { projs } from '../ProjList' 
+import { projs } from '../List' 
 
 interface Props {classes: any}
 interface State {}
@@ -15,11 +15,8 @@ const styles = createStyles({
 	},
 })
 
-
 class Name extends Component<Props, State> {
-
 	render() {
-		console.log(projs)
 		const {classes} = this.props
 		return (
 			<div className={classes.cardContainer}>
@@ -27,7 +24,6 @@ class Name extends Component<Props, State> {
 				return <ProjCard key={i} img={projs[p].img} title={p} desc={projs[p].desc} link1={projs[p].link1} link2={projs[p].link2} />
 			})
 			}
-
 			</div>
 		)
 	}

@@ -4,6 +4,7 @@ import './styles/App.css'
 
 import About from './components/About'
 import Projs from './components/Projs'
+import Articles from './components/Articles'
 
 interface Props {classes: any}
 interface State {}
@@ -44,7 +45,7 @@ class App extends Component<Props, State> {
 
     return (
       <div className={classes.globalFont}>
-      
+
         <div className={classes.container} id="home">
           <div className={classes.navSection}>
             <a className={classes.navLink} href="#about">about</a>
@@ -57,7 +58,7 @@ class App extends Component<Props, State> {
 
         <div className={classes.container2} id="about"><About/></div>
         <div className={classes.container2} id="projects"><Projs/></div>
-        <div className={classes.container2} id="articles"><h1>I'm the articls section</h1></div>
+        <div className={classes.container2} id="articles"><Articles/></div>
         <div className={classes.container2} id="contact"><h1>I'm the contact section</h1></div>
 
       </div>

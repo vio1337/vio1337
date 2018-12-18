@@ -20,10 +20,9 @@ class Name extends Component<Props, State> {
 		const {classes} = this.props
 		return (
 			<div className={classes.cardContainer}>
-			{Object.keys(projs).map((p, i)=> {
-				return <ProjCard key={i} img={projs[p].img} title={p} desc={projs[p].desc} link1={projs[p].link1} link2={projs[p].link2} />
-			})
-			}
+				{Object.keys(projs).map((p, i)=> {
+					return <ProjCard key={i} img={projs[p].img} title={p} desc={projs[p].desc} link1={projs[p].link1} link2={projs[p].link2} />
+				})}
 			</div>
 		)
 	}

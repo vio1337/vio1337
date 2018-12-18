@@ -17,10 +17,9 @@ class Articles extends Component<Props, State> {
 		const {classes} = this.props
 		return (
 			<div>
-			{Object.keys(articles).map((a, i)=> {
-				console.log(articles[a].img)
-				return <ArticleCard key={i} img={articles[a].img} title={a} link={articles[a].link}/>
-			})}
+				{Object.keys(articles).map((a, i)=> {
+					return <ArticleCard key={i} img={articles[a].img} title={a} link={articles[a].link}/>
+				})}
 			</div>
 		)
 	}

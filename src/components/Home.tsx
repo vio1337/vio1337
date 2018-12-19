@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 
 interface Props {classes: any}
@@ -10,9 +10,7 @@ const styles = createStyles({
 		flexFlow: 'column wrap',
 		justifyContent: 'center',
 		alignItems: 'center',
-		height: '100vh',
-		backgroundImage: 'url("https://media.giphy.com/media/g6HhfNmgSCjqU/giphy.gif")',
-		backgroundRepeat: 'no-repeat',
+	    margin: '-175px 0 0 275px',
 	},
 	nameContainer: {
 		display: 'flex',
@@ -34,20 +32,20 @@ const styles = createStyles({
 })
 
 class Home extends Component<Props, State> {
-
 	render() {
 		const {classes} = this.props
 		return (
-			<div className={classes.homeContainer}>
-				<div style={{textAlign: 'center'}}>
+			<Fragment>
+				<img src='https://media.giphy.com/media/g6HhfNmgSCjqU/giphy.gif' style={{width: 550, height: 'auto'}}/>
+				<div className={classes.homeContainer}>	
 					<div className={classes.nameContainer}>
 						<div className={classes.title}>VI</div>
-						<img className={classes.img} src={require('../styles/images/circle.png')}/>
+						<img className='img' src={require('../styles/images/circle.png')}/>
 						<div className={classes.title}>LET</div>
 					</div>
 					<div className={classes.blurb}>curiousity-driven full stack web developer</div>
 				</div>
-			</div>
+			</Fragment>
 		)
 	}
 }

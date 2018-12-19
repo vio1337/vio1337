@@ -82,7 +82,7 @@ class About extends Component<Props, State> {
 					<div className={classes.colorBlockBio}></div>
 						<div className={classes.bioTitle}>Violet Moon</div>
 						<p style={{lineHeight: '180%', fontSize: '.9em', paddingBottom: 10}}>
-						As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy, and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
+						As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
 						</p>
 						<div>
 							<Button className={classes.btn} href={'#projects'} style={{backgroundColor: 'lightsalmon'}}>View Projects</Button>

@@ -7,6 +7,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Projs from './components/Projs'
 import Articles from './components/Articles'
+import Contact from './components/Contact'
 
 interface Props {classes: any}
 interface State {route:string}
@@ -26,6 +27,7 @@ const styles = createStyles({
     display: 'flex',
     flexFlow: 'column wrap',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   navSection:{
     display: 'flex',
@@ -92,7 +94,7 @@ class App extends Component<Props, State> {
         <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About/></div>
         <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
         <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles/></div>
-        <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><h1>I'm the contact section</h1></div>
+        <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact/></div>
 
       </div>
     )

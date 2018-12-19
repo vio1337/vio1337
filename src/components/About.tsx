@@ -56,7 +56,6 @@ const styles = createStyles({
 	    zIndex: 1,
 	},
 	btn: {
-		// border: '1px solid lightgray',
 	    borderRadius: 0,
 	    marginRight: 20,
 	    marginTop: 10,
@@ -64,6 +63,8 @@ const styles = createStyles({
 })
 
 class About extends Component<Props, State> {
+
+
 	render() {
 		const {classes} = this.props
 		return (
@@ -80,7 +81,7 @@ class About extends Component<Props, State> {
 					<div className={classes.bioSection}>
 					<div className={classes.colorBlockBio}></div>
 						<div className={classes.bioTitle}>Violet Moon</div>
-						<p style={{lineHeight: '180%'}}>
+						<p style={{lineHeight: '180%', fontSize: '.9em', paddingBottom: 10}}>
 						As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy, and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
 						</p>
 						<div>

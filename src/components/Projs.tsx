@@ -15,7 +15,8 @@ const styles = createStyles({
 	},
 })
 
-class Name extends Component<Props, State> {
+class Projs extends Component<Props, State> {
+
 	render() {
 		const {classes} = this.props
 		return (
@@ -28,4 +29,4 @@ class Name extends Component<Props, State> {
 	}
 }
 
-export default withStyles(styles)(Name)
+export default withStyles(styles)(Projs)

@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button'
 interface Props {classes: any, img: string, title: string, desc:string, link1:string, link2:string}
 interface State {}
 
+const colors:string[] = ['aliceblue', 'lightsalmon', 'cadetblue', 'lightgoldenrodyellow']
+
 const styles = createStyles({
 	card: {
 		margin: 40,
@@ -47,6 +49,8 @@ class ProjCard extends Component<Props, State> {
 		}
 	}
 
+	colorPicker = () => colors[Math.floor(Math.random() * colors.length)]
+
 	render() {
 		const { title, img, desc, link1, link2, classes } = this.props
 		return (
@@ -56,10 +60,10 @@ class ProjCard extends Component<Props, State> {
 
 				<CardContent style={{paddingBottom: 0}}>
 					<div className={classes.title}>{title}</div>
-					<p>{desc}</p>
+					<p style={{fontSize: '.9em', paddingBottom: 10, color: 'rgba(0,0,0,.4)'}}>{desc}</p>
 				</CardContent>
 				
-				<div className={classes.actionRow}>
+				<div className={classes.actionRow} >
 					<CardActions>
 						<Button href={link1}>{this.displayText(desc)}</Button>
 					</CardActions>

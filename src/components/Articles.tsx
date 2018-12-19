@@ -29,6 +29,7 @@ const styles = createStyles({
 })
 
 class Articles extends Component<Props, State> {
+
 	render() {
 		const {classes} = this.props
 		return (
@@ -37,7 +38,7 @@ class Articles extends Component<Props, State> {
 					{Object.keys(articles).map((a, i)=> (
 						<GridListTile key={i} cols={articles[a].cols || 1}>
 							<a href={articles[a].link}>
-					            <img src={articles[a].img} alt={a}/>
+					            <img src={articles[a].img} alt={a} />
 					            <GridListTileBar
 					              title={a}
 					              classes={{root: classes.titleBar, title: classes.title}}

@@ -20,7 +20,7 @@ const styles = createStyles({
 	bioTitle: {
 		fontSize: '1.5em',
 		fontFamily: 'Roboto, sans-serif',
-		letterSpacing: 1.5,
+		letterSpacing: 5,
 		fontWeight: 600,
 		paddingBottom: 10,
 	},

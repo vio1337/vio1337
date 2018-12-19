@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
 
 interface Props {classes: any}
 interface State {}
@@ -54,6 +55,12 @@ const styles = createStyles({
 	    marginTop: '-40px',
 	    zIndex: 1,
 	},
+	btn: {
+		// border: '1px solid lightgray',
+	    borderRadius: 0,
+	    marginRight: 20,
+	    marginTop: 10,
+	}
 })
 
 class About extends Component<Props, State> {
@@ -76,6 +83,10 @@ class About extends Component<Props, State> {
 						<p style={{lineHeight: '180%'}}>
 						As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy, and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
 						</p>
+						<div>
+							<Button className={classes.btn} href={'#projects'} style={{backgroundColor: 'lightsalmon'}}>View Projects</Button>
+							<Button className={classes.btn} href={'#contact'} style={{backgroundColor: 'aliceblue'}}>Work With Me</Button>
+						</div>	
 					</div>
 				</div>
 				{/*<div className={classes.divSkewBottom}></div>*/}

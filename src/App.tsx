@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 import './styles/App.css'
 
+import Home from './components/Home'
 import About from './components/About'
 import Projs from './components/Projs'
 import Articles from './components/Articles'

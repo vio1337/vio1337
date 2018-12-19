@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 
 import { articles } from '../List'
-import ArticleCard from './ArticleCard'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
@@ -37,8 +36,8 @@ class Articles extends Component<Props, State> {
 				<GridList cellHeight={250} className={classes.gridList} cols={4}>
 					{Object.keys(articles).map((a, i)=> (
 						<GridListTile key={i} cols={articles[a].cols || 1}>
-							<a href={articles[a].link} target='_blank'>
-					            <img src={articles[a].img} alt={a} style={{height: '120%'}}/>
+							<a href={articles[a].link}>
+					            <img src={articles[a].img} alt={a}/>
 					            <GridListTileBar
 					              title={a}
 					              classes={{root: classes.titleBar, title: classes.title}}
@@ -54,5 +53,3 @@ class Articles extends Component<Props, State> {
 }
 
 export default withStyles(styles)(Articles)
-
-// return <ArticleCard key={i} img={articles[a].img} title={a} link={articles[a].link}/>

@@ -7,20 +7,28 @@ interface State {}
 const styles = createStyles({
 	homeContainer: {
 		display: 'flex',
+		flexFlow: 'column wrap',
 		justifyContent: 'center',
 		alignItems: 'center',
 		height: '100vh',
+		backgroundImage: 'url("https://media.giphy.com/media/g6HhfNmgSCjqU/giphy.gif")',
+		backgroundRepeat: 'no-repeat',
 	},
 	nameContainer: {
 		display: 'flex',
 		flexFlow: 'row nowrap',
 		alignItems: 'center',
+		backgroundColor: 'white',
 	},
 	title: {
-		fontFamily: 'Roboto',
 		fontSize: '10em',
 		textAlign: 'left',
 		padding: 10,
+	},
+	blurb: {
+		color: 'rgba(0,0,0,.3)',
+		fontSize: '1.2em',
+		backgroundColor: 'white',
 	}
 })
 
@@ -30,10 +38,13 @@ class Home extends Component<Props, State> {
 		const {classes} = this.props
 		return (
 			<div className={classes.homeContainer}>
-				<div className={classes.nameContainer}>
-					<div className={classes.title}>VI</div>
-					<img className={classes.img} src={require('../styles/images/circle.png')}/>
-					<div className={classes.title}>LET</div>
+				<div style={{textAlign: 'left'}}>
+					<div className={classes.nameContainer}>
+						<div className={classes.title}>VI</div>
+						<img className={classes.img} src={require('../styles/images/circle.png')}/>
+						<div className={classes.title}>LET</div>
+					</div>
+					<div className={classes.blurb}>Curiousity-driven full stack web developer.</div>
 				</div>
 			</div>
 		)

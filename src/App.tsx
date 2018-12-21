@@ -39,6 +39,7 @@ const styles = createStyles({
     flexFlow: 'column wrap',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
   },
   navSection:{
     display: 'flex',
@@ -112,12 +113,14 @@ class App extends Component<Props, State> {
     return (
         <div className={classes.globalFont}>
           <Media query='(max-width: 1130px)'>
-            {matches => matches ?
+            {matches => matches ?  
               <Fragment>
+
                 <div style={{textAlign: 'right'}} onClick={this.handleDrawer}><IconButton><MenuIcon/></IconButton></div>
                 <Drawer open={this.state.drawer} variant='persistent' anchor='right' classes={{paper: classes.drawer}}>
                   <InnerDrawer nav={this.renderNav()} handleDrawer={this.handleDrawer}/>
                 </Drawer>
+
                 <div className={classes.contentContainer}>
                    <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home/></div>
                    <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About1130/></div>
@@ -125,9 +128,11 @@ class App extends Component<Props, State> {
                    <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles1130/></div>
                    <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact1130/></div>   
                 </div>
+
               </Fragment>
               :
               <Fragment>
+
                 <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home/>
                   <div className={classes.navSection} style={this.state.route === 'home' ? {display: 'none'} : {}}>{this.renderNav()}</div>
                 </div>
@@ -135,6 +140,7 @@ class App extends Component<Props, State> {
                 <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
                 <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles/></div>
                 <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact/></div>
+              
               </Fragment>
             }
           </Media>

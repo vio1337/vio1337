@@ -7,10 +7,12 @@ interface State {}
 
 const styles = createStyles({
 	contactContainer: {
-		diplay: 'flex',
-		flowFlow: 'row wrap',
+		display: 'flex',
+		flexFlow: 'row wrap',
 		alignItems: 'center',
+		justifyContent: 'center',
 		zIndex: 2,
+		margin: 50,
 	},
 	link: {
 		textDecoration: 'none',
@@ -30,18 +32,18 @@ const styles = createStyles({
 	    height: 150,
 	    width: 300,
 	    backgroundColor: 'lightgoldenrodyellow',
-	    margin: '-216px 0 40px 508px',
 	},
 	colorBlock3: {
 	    height: 250,
-	    width: 420,
+	    width: 300,
 	    backgroundColor: 'cadetblue',
-	    margin: '200px 0 -440px -900px',
+	    margin: '10px 0 -20px 50px',
 	},
 	colorBlock4: {
 	    height: 300,
     	width: 150,
     	backgroundColor: 'aliceblue',
+    	margin: '-70px'
 	},
 })
 

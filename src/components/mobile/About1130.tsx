@@ -14,7 +14,7 @@ const styles = createStyles({
 		zIndex: 2,
 	},
 	bioSection: {
-		width: '30%',
+		width: 350,
 		textAlign: 'left',
 	},
 	bioTitle: {
@@ -38,22 +38,8 @@ const styles = createStyles({
 	    height: 150,
 	   	width: 200,
 	    backgroundColor: 'lightgoldenrodyellow',
-	    margin: '0px 0px -100px 300px',
+        margin: '-44px',
 	    mixBlendMode: 'multiply',
-	},
-	divSkewTop: {
-	    transform: 'skewY(2deg)',
-	    backgroundColor: 'aliceblue',
-        height: 150,
-	    marginBottom: '-40px',
-	    zIndex: 1,
-	},
-	divSkewBottom: {
-	    transform: 'skewY(2deg)',
-	    backgroundColor: 'aliceblue',
-        height: 150,
-	    marginTop: '-40px',
-	    zIndex: 1,
 	},
 	btn: {
 	    borderRadius: 0,

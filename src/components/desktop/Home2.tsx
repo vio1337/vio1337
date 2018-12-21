@@ -11,14 +11,13 @@ const styles = createStyles({
 		flexFlow: 'column wrap',
 		justifyContent: 'center',
 		alignItems: 'center',
-	  	height: '100vh',
-	    backgroundImage: 'url("https://media.giphy.com/media/g6HhfNmgSCjqU/giphy.gif")',
-	    backgroundRepeat: 'no-repeat',
+	    margin: '-175px 0 0 275px',
 	},
 	nameContainer: {
 		display: 'flex',
-		flexFlow: 'row wrap',
+		flexFlow: 'row nowrap',
 		alignItems: 'center',
+		backgroundColor: 'white',
 	},
 	title: {
 		fontSize: '10em',
@@ -37,15 +36,16 @@ const styles = createStyles({
 	}
 })
 
-class Home1130 extends Component<Props, State> {
+class Home extends Component<Props, State> {
 	render() {
 		const {classes} = this.props
 		return (
 			<Fragment>
+				<img src='https://media.giphy.com/media/g6HhfNmgSCjqU/giphy.gif' style={{width: 550, height: 'auto'}}/>
 				<div className={classes.homeContainer}>	
 					<div className={classes.nameContainer}>
 						<div className={classes.title}>VI</div>
-					<img className='img' src={require('../../styles/images/circle.png')}/>
+						<img className='img' src={require('../../styles/images/circle.png')}/>
 						<div className={classes.title}>LET</div>
 					</div>
 					<div className={classes.blurb}>curiousity-driven full stack web developer</div>
@@ -59,4 +59,4 @@ class Home1130 extends Component<Props, State> {
 	}
 }
 
-export default withStyles(styles)(Home1130)
+export default withStyles(styles)(Home)

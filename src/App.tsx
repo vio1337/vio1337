@@ -3,7 +3,6 @@ import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Media from 'react-media'
 import './styles/App.css'
 import checkVisible from './utils/checkVisible'
-import Drawer from '@material-ui/core/Drawer'
 
 import Home from './components/desktop/Home'
 import About from './components/desktop/About'
@@ -12,11 +11,14 @@ import Articles from './components/desktop/Articles'
 import Contact from './components/desktop/Contact'
 
 import InnerDrawer from './components/mobile/InnerDrawer'
-import Home1130 from './components/mobile/Home1130'
 import About1130 from './components/mobile/About1130'
 import Projs1130 from './components/mobile/Projs1130'
 import Articles1130 from './components/mobile/Articles1130'
 import Contact1130 from './components/mobile/Contact1130'
+
+import Drawer from '@material-ui/core/Drawer'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
 
 interface Props {classes: any}
 interface State {route:string, drawer:boolean}
@@ -53,7 +55,7 @@ const styles = createStyles({
   drawer: {
     zIndex: 3,
     backgroundColor: 'black',
-
+    width: 180,
   }
 })
 
@@ -103,6 +105,8 @@ class App extends Component<Props, State> {
     )
   }
 
+  handleDrawer = () => this.setState({drawer: !this.state.drawer})
+
   render() { 
     const {classes} = this.props
     return (
@@ -110,9 +114,12 @@ class App extends Component<Props, State> {
           <Media query='(max-width: 1130px)'>
             {matches => matches ?
               <Fragment>
-                <Drawer open={true} variant='persistent' anchor='right' classes={{paper: classes.drawer}}><InnerDrawer nav={this.renderNav()}/></Drawer>
+                <div style={{textAlign: 'right'}} onClick={this.handleDrawer}><IconButton><MenuIcon/></IconButton></div>
+                <Drawer open={this.state.drawer} variant='persistent' anchor='right' classes={{paper: classes.drawer}}>
+                  <InnerDrawer nav={this.renderNav()} handleDrawer={this.handleDrawer}/>
+                </Drawer>
                 <div className={classes.contentContainer}>
-                   <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home1130/></div>
+                   <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home/></div>
                    <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About1130/></div>
                    <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs1130/></div>
                    <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles1130/></div>

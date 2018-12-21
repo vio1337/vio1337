@@ -9,32 +9,47 @@ import InfoIcon from '@material-ui/icons/Info'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 
-interface Props {classes: any, theme:any, nav:JSX.Element}
+interface Props {classes: any, theme:any, nav:JSX.Element, handleDrawer:()=>void}
 interface State {}
 
 const styles = (theme:Theme) => createStyles({
+	list: {
+		paddingLeft: 30,
+	},
 	navLink: {
-	    fontSize: '.9em',
+	    fontSize: '1em',
 	    textDecoration: 'none',
-	    color: 'white',
-  },
+	    paddingTop: 10,
+	    paddingBottom: 10,
+	},
 })
 
 class InnerDrawer extends Component<Props, State> {
 	render() {
-		const {classes, theme, nav} = this.props
+		const {classes, theme, nav, handleDrawer} = this.props
+		console.log(nav.props.children)
 	    return (
 	      <Fragment>
-	        <div className={classes.drawerHeader}>
-	          <IconButton >{theme.direction === 'rtl' ? <ChevronLeftIcon style={{fill: 'white'}}/> : <ChevronRightIcon style={{fill: 'white'}}/>}</IconButton>
+	        <div className={classes.drawerHeader} onClick={handleDrawer}>
+	          <IconButton><ChevronLeftIcon style={{fill: 'white'}}/></IconButton>
 	        </div>
-	        <List>
+	        <List className={classes.list}>
 	        	{nav.props.children.map((a:any, i:number)=> {
-	        		return (
-			          <ListItem key={i}>
-			          	<a href={a.props.href} className={classes.navLink}><ListItemText disableTypography style={{color: 'white'}}primary={a.props.children}/></a>
-			          </ListItem>
-	        		)
+	        		if (a.props.children.type === 'img') {
+	        			return (
+			        		<ListItem key={i}>
+			        			<a href="#home"><img src={require('../../styles/images/white-cresent.png')} /></a>
+			        		</ListItem>
+	        			)
+	        		} else {
+	        			return (
+				  	        <ListItem key={i}>
+				    	      	<a href={a.props.href} className={classes.navLink}>
+				    	      		<ListItemText disableTypography style={{color: 'white'}} primary={a.props.children}/>
+				    	      	</a>
+					        </ListItem>
+	        			)
+	        		}
 	        	})
 
 	        	}

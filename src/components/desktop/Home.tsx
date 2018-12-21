@@ -31,6 +31,7 @@ const styles = createStyles({
 		fontSize: '1.2em',
 		backgroundColor: 'white',
 		letterSpacing: 3,
+		padding: '0 40px 10px',
 	},
 	btn: {
 		marginTop: 30,

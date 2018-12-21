@@ -14,8 +14,9 @@ const styles = createStyles({
 		zIndex: 2,
 	},
 	bioSection: {
-		width: 350,
+		width: '100%',
 		textAlign: 'left',
+		padding: '0 10px 0 30px',
 	},
 	bioTitle: {
 		fontSize: '1.5em',
@@ -41,6 +42,9 @@ const styles = createStyles({
         margin: '-44px',
 	    mixBlendMode: 'multiply',
 	},
+	bioText: {
+
+	},
 	btn: {
 	    borderRadius: 0,
 	    marginRight: 20,
@@ -55,7 +59,6 @@ class About1130 extends Component<Props, State> {
 		const {classes} = this.props
 		return (
 			<Fragment>
-				{/*<div className={classes.divSkewTop}></div>*/}
 				<div className={classes.aboutSection}>
 				
 					<div className={classes.imgSection}>
@@ -65,18 +68,19 @@ class About1130 extends Component<Props, State> {
 						</Fragment>
 					</div>
 					<div className={classes.bioSection}>
-					<div className={classes.colorBlockBio}></div>
-						<div className={classes.bioTitle}>Violet Moon</div>
-						<p style={{lineHeight: '180%', fontSize: '.9em', paddingBottom: 10}}>
-						As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
-						</p>
+						<div className={classes.colorBlockBio}></div>
+						<div className={classes.bioText}>
+							<div className={classes.bioTitle}>Violet Moon</div>
+							<p style={{lineHeight: '180%', fontSize: '.9em', paddingBottom: 10}}>
+							As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
+							</p>
+						</div>
 						<div>
 							<Button className={classes.btn} href={'#projects'} style={{backgroundColor: 'lightsalmon'}}>View Projects</Button>
 							<Button className={classes.btn} href={'#contact'} style={{backgroundColor: 'aliceblue'}}>Work With Me</Button>
 						</div>	
 					</div>
 				</div>
-				{/*<div className={classes.divSkewBottom}></div>*/}
 			</Fragment>
 		)
 	}

@@ -40,6 +40,11 @@ const styles = createStyles({
     alignItems: 'center',
     overflow: 'hidden',
   },
+  navMenu: {
+    position: 'fixed',
+    width: '100%',
+    textAlign: 'right',
+  },
   navSection:{
     display: 'flex',
     justifyContent: 'space-evenly',
@@ -115,7 +120,7 @@ class App extends Component<Props, State> {
             {matches => matches ?  
               <Fragment>
 
-                <div style={{textAlign: 'right'}} onClick={this.handleDrawer}><IconButton><MenuIcon/></IconButton></div>
+                <div className={classes.navMenu} onClick={this.handleDrawer}><IconButton><MenuIcon/></IconButton></div>
                 <Drawer open={this.state.drawer} variant='persistent' anchor='right' classes={{paper: classes.drawer}}>
                   <InnerDrawer nav={this.renderNav()} handleDrawer={this.handleDrawer}/>
                 </Drawer>

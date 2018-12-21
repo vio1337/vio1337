@@ -78,19 +78,19 @@ class App extends Component<Props, State> {
   contactSection: HTMLDivElement | null = null
 
   componentDidMount() {
-    // setInterval(()=>{
-    //  if (checkVisible(this.contactSection)) {
-    //     this.setState({route: 'contact'}) 
-    //   } else if (checkVisible(this.articlesSection, 400)) { 
-    //     this.setState({route: 'articles'}) 
-    //   } else if (checkVisible(this.projectsSection, 400)) { 
-    //     this.setState({route: 'projects'}) 
-    //   } else if (checkVisible(this.aboutSection, 400)) { 
-    //     this.setState({route: 'about'}) 
-    //   } else if (checkVisible(this.homeSection, 400)) { 
-    //     this.setState({route: 'home'})
-    //   }
-    // }, 300)
+    setInterval(()=>{
+     if (checkVisible(this.contactSection)) {
+        this.setState({route: 'contact'}) 
+      } else if (checkVisible(this.articlesSection, 400)) { 
+        this.setState({route: 'articles'}) 
+      } else if (checkVisible(this.projectsSection, 400)) { 
+        this.setState({route: 'projects'}) 
+      } else if (checkVisible(this.aboutSection, 400)) { 
+        this.setState({route: 'about'}) 
+      } else if (checkVisible(this.homeSection, 400)) { 
+        this.setState({route: 'home'})
+      }
+    }, 300)
   }
 
   handleRoute = (route:string) => this.setState({route})

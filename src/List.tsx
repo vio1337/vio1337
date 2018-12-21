@@ -51,14 +51,14 @@ export const articles: {[title:string]: ArtDetails} = {
 		link: 'https://medium.com/@violetmoon/javascript-promises-f4c5625aea1a',
 		cols: 1,
 	},
-	'RESTful Ruby' : {
-		img: 'https://cdn-images-1.medium.com/max/800/1*VYSaS5cCKDkMWyWGSZ4z7Q.jpeg',
-		link: 'https://medium.com/@violetmoon/activerecord-rest-and-sinatra-frankenstein-ing-the-internet-3004f656717f',
-		cols: 2,
-	},
 	'ORM + ActiveRecord' : {
 		img: 'https://cdn-images-1.medium.com/max/800/1*43TU7StyO3uZP2UFBPkRFQ.gif',
 		link: 'https://medium.com/@violetmoon/understanding-orm-frameworks-with-ruby-and-activerecord-83a9e9d8490e',
 		cols: 1,
+	},
+	'RESTful Ruby' : {
+		img: 'https://cdn-images-1.medium.com/max/800/1*VYSaS5cCKDkMWyWGSZ4z7Q.jpeg',
+		link: 'https://medium.com/@violetmoon/activerecord-rest-and-sinatra-frankenstein-ing-the-internet-3004f656717f',
+		cols: 2,
 	},
 }

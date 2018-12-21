@@ -18,9 +18,11 @@ const styles = createStyles({
 		flexFlow: 'row wrap',
 		justifyContent: 'space-around',
 		overflow: 'hidden',
+		width: '100%',
 	},
 	gridList: {
-    	width: '75%',
+    	width: '90%',
+    	overflowY: 'scroll'
   	},
   	titleBar: {
     	background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
@@ -33,7 +35,7 @@ class Articles1130 extends Component<Props, State> {
 		const {classes} = this.props
 		return (
 			<div className={classes.cardContainer}>
-				<GridList cellHeight={250} className={classes.gridList} cols={4}>
+				<GridList cellHeight={200} className={classes.gridList} cols={2}>
 					{Object.keys(articles).map((a, i)=> (
 						<GridListTile key={i} cols={articles[a].cols || 1}>
 							<a href={articles[a].link}>

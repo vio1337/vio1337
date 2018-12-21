@@ -27,7 +27,6 @@ const styles = (theme:Theme) => createStyles({
 class InnerDrawer extends Component<Props, State> {
 	render() {
 		const {classes, theme, nav, handleDrawer} = this.props
-		console.log(nav.props.children)
 	    return (
 	      <Fragment>
 	        <div className={classes.drawerHeader} onClick={handleDrawer}>

@@ -42,9 +42,6 @@ const styles = createStyles({
         margin: '-44px',
 	    mixBlendMode: 'multiply',
 	},
-	bioText: {
-
-	},
 	btn: {
 	    borderRadius: 0,
 	    marginRight: 20,
@@ -69,12 +66,10 @@ class About1130 extends Component<Props, State> {
 					</div>
 					<div className={classes.bioSection}>
 						<div className={classes.colorBlockBio}></div>
-						<div className={classes.bioText}>
-							<div className={classes.bioTitle}>Violet Moon</div>
-							<p style={{lineHeight: '180%', fontSize: '.9em', paddingBottom: 10}}>
-							As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
-							</p>
-						</div>
+						<div className={classes.bioTitle}>Violet Moon</div>
+						<p style={{lineHeight: '180%', fontSize: '.9em', paddingBottom: 10}}>
+						As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
+						</p>
 						<div>
 							<Button className={classes.btn} href={'#projects'} style={{backgroundColor: 'lightsalmon'}}>View Projects</Button>
 							<Button className={classes.btn} href={'#contact'} style={{backgroundColor: 'aliceblue'}}>Work With Me</Button>

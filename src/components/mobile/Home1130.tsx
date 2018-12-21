@@ -22,9 +22,12 @@ const styles = createStyles({
 		justifyContent: 'center',
 	},
 	title: {
-		fontSize: '10em',
-		textAlign: 'left',
-		padding: 10,
+		fontSize: '9em',
+		marginTop: '-30px',
+	},
+	img: {
+		height: 108,
+		marginLeft: 5,
 	},
 	blurb: {
 		color: 'rgba(0,0,0,.3)',
@@ -35,6 +38,14 @@ const styles = createStyles({
 	btn: {
 		marginTop: 30,
 		border: '1px solid rgba(0,0,0,.2)',
+	},
+	opacity: {
+		height: '100vh',
+		backgroundColor: 'rgba(255,255,255,.8)',
+		display: 'flex',
+		flexFlow: 'column wrap',
+		justifyContent: 'center',
+		alignItems: 'center',
 	}
 })
 
@@ -43,16 +54,18 @@ class Home1130 extends Component<Props, State> {
 		const {classes} = this.props
 		return (
 			<Fragment>
-				<div className={classes.homeContainer}>	
-					<div className={classes.nameContainer}>
-						<div className={classes.title}>VI</div>
-					<img id='img' src={require('../../styles/images/circle.png')}/>
-						<div className={classes.title}>LET</div>
-					</div>
-					<div className={classes.blurb}>curiousity-driven full stack web developer</div>
-					<div className={classes.nameContainer}>
-						<Button href="#about" className={classes.btn} style={{marginRight: 20}}>Learn More</Button>
-						<Button href="#projects" className={classes.btn}>View Projects</Button>
+				<div className={classes.homeContainer}>
+					<div className={classes.opacity}>
+						<div className={classes.nameContainer}>
+							<div style={{fontSize: '9em'}}>VI</div>
+							<img id='img' className={classes.img} src={require('../../styles/images/circle.png')}/>
+							<div className={classes.title}>LET</div>
+						</div>
+						<div className={classes.blurb}>curiousity-driven full stack web developer</div>
+						<div className={classes.nameContainer}>
+							<Button href="#about" className={classes.btn} style={{marginRight: 20}}>Learn More</Button>
+							<Button href="#projects" className={classes.btn}>View Projects</Button>
+						</div>
 					</div>
 				</div>
 			</Fragment>

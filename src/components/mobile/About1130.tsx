@@ -16,30 +16,31 @@ const styles = createStyles({
 	bioSection: {
 		width: '100%',
 		textAlign: 'left',
-		padding: '0 10px 0 30px',
+		padding: '0 20px 0 40px',
 	},
 	bioTitle: {
 		fontSize: '1.5em',
 		fontFamily: 'Roboto, sans-serif',
-		letterSpacing: 5,
+		letterSpacing: 8,
 		fontWeight: 600,
-		paddingBottom: 10,
+		padding: '15px 0 5px',
 	},
 	headshot: {
-		height: 300,
-		width: 300,
+		marginTop: 40,
+		height: 250,
+		width: 250,
 	},
 	colorBlockImg: {
 	    backgroundColor: 'cadetblue',
-	    height: 150,
-	    margin: '-80px -40px 0px 100px',
+	    height: 100,
+	    margin: '-70px -40px 0px 100px',
 	    mixBlendMode: 'multiply',
 	},
 	colorBlockBio: {
-	    height: 150,
+	    height: 175,
 	   	width: 200,
 	    backgroundColor: 'lightgoldenrodyellow',
-        margin: '-44px',
+        margin: '-70px -44px -100px -44px',
 	    mixBlendMode: 'multiply',
 	},
 	btn: {
@@ -70,7 +71,7 @@ class About1130 extends Component<Props, State> {
 						<p style={{lineHeight: '180%', fontSize: '.9em', paddingBottom: 10}}>
 						As a fullstack developer and healing advocate, developing technology that empowers the individual defines the intersection of my passion and talent. I have strong experience working with front-end frameworks and Ruby based programming — and contribute a diverse background in digital marketing strategy. Through ambition, empathy and acumen, my greatest work manifests when supporting mission-driven companies to expand their impact.
 						</p>
-						<div>
+						<div style={{marginBottom: 40}}>
 							<Button className={classes.btn} href={'#projects'} style={{backgroundColor: 'lightsalmon'}}>View Projects</Button>
 							<Button className={classes.btn} href={'#contact'} style={{backgroundColor: 'aliceblue'}}>Work With Me</Button>
 						</div>	

@@ -19,6 +19,7 @@ const styles = createStyles({
 		justifyContent: 'space-around',
 		overflow: 'hidden',
 		width: '100%',
+		margin: '40px 0',
 	},
 	gridList: {
     	width: '90%',

@@ -8,11 +8,17 @@ interface State {}
 const styles = createStyles({
 	contactContainer: {
 		display: 'flex',
+		flexFlow: 'column',
+		alignItems: 'center',
+		margin: '-100px 0 100px',
+	},
+	contactIcons: {
+		display: 'flex',
 		flexFlow: 'row wrap',
 		alignItems: 'center',
 		justifyContent: 'center',
 		zIndex: 2,
-		margin: 50,
+		margin: '0 150px',
 	},
 	link: {
 		textDecoration: 'none',
@@ -26,7 +32,7 @@ const styles = createStyles({
     	width: 300,
 	    backgroundColor: 'rgba(255, 160, 122, .6)',
 	    zIndex: 1,
-	    margin: '0 300px -80px 0',
+	    margin: '0 300px -280px 0',
 	},
 	colorBlock2: {
 	    height: 150,
@@ -34,7 +40,7 @@ const styles = createStyles({
 	    backgroundColor: 'lightgoldenrodyellow',
 	},
 	colorBlock3: {
-	    height: 250,
+	    height: 100,
 	    width: 300,
 	    backgroundColor: 'cadetblue',
 	    margin: '10px 0 -20px 50px',
@@ -43,7 +49,7 @@ const styles = createStyles({
 	    height: 300,
     	width: 150,
     	backgroundColor: 'aliceblue',
-    	margin: '-70px'
+    	margin: '-270px -70px'
 	},
 })
 
@@ -51,18 +57,18 @@ class Contact1130 extends Component<Props, State> {
 	render() {
 		const {classes} = this.props
 		return (
-			<Fragment>
-			<div className={classes.colorBlock1}></div>
-			<div className={classes.colorBlock2}></div>
 			<div className={classes.contactContainer}>
-				<a className={classes.link} href="mailto:violet.wmoon@gmail.com"><img src={require('../../styles/images/mail.png')}/></a>
-				<a className={classes.link} href="https://github.com/vio1337"><img src={require('../../styles/images/github.png')}/></a>
-				<a className={classes.link} href="https://medium.com/@violetmoon"><img src={require('../../styles/images/medium.png')}/></a>
-				<a className={classes.link} href="https://linkedin.com/in/violetmoon"><img src={require('../../styles/images/linkedin.png')}/></a>
+				<div className={classes.colorBlock1}></div>
+				<div className={classes.colorBlock2}></div>
+				<div className={classes.contactIcons}>
+					<a className={classes.link} href="mailto:violet.wmoon@gmail.com"><img src={require('../../styles/images/mail.png')}/></a>
+					<a className={classes.link} href="https://github.com/vio1337"><img src={require('../../styles/images/github.png')}/></a>
+					<a className={classes.link} href="https://medium.com/@violetmoon"><img src={require('../../styles/images/medium.png')}/></a>
+					<a className={classes.link} href="https://linkedin.com/in/violetmoon"><img src={require('../../styles/images/linkedin.png')}/></a>
+				</div>
+				<div className={classes.colorBlock3}></div>
+				<div className={classes.colorBlock4}></div>
 			</div>
-			<div className={classes.colorBlock3}></div>
-			<div className={classes.colorBlock4}></div>
-			</Fragment>
 		)
 	}
 }

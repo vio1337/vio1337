@@ -11,6 +11,7 @@ import Articles from './components/desktop/Articles'
 import Contact from './components/desktop/Contact'
 
 import InnerDrawer from './components/mobile/InnerDrawer'
+import Home1130 from './components/mobile/Home1130'
 import About1130 from './components/mobile/About1130'
 import Articles1130 from './components/mobile/Articles1130'
 import Contact1130 from './components/mobile/Contact1130'
@@ -38,7 +39,8 @@ const styles = createStyles({
     flexFlow: 'column wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden',
+    overflowY: 'scroll',
+    overflowX: 'hidden',
   },
   navMenu: {
     position: 'fixed',
@@ -58,7 +60,7 @@ const styles = createStyles({
     color: 'black',
   },
   drawer: {
-    zIndex: 3,
+    zIndex: 5,
     backgroundColor: 'black',
     width: 180,
   }
@@ -126,7 +128,7 @@ class App extends Component<Props, State> {
                 </Drawer>
 
                 <div className={classes.contentContainer}>
-                   <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home/></div>
+                   <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home1130/></div>
                    <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About1130/></div>
                    <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
                    <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles1130/></div>

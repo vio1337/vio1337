@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
+import Media from 'react-media'
 import './styles/App.css'
 import checkVisible from './utils/checkVisible'
 
@@ -56,6 +57,7 @@ class App extends Component<Props, State> {
   contactSection: HTMLDivElement | null = null
 
   componentDidMount() {
+
     setInterval(()=>{
      if (checkVisible(this.contactSection)) {
         this.setState({route: 'contact'}) 
@@ -75,27 +77,41 @@ class App extends Component<Props, State> {
 
   underline = (section:string) => this.state.route === section ? '1px solid' : 'none'
 
+  renderNav = () => {
+    const {classes} = this.props
+    return (
+      <Fragment>
+        <a className={classes.navLink} style={{borderBottom: this.underline('about')}} href="#about">about</a>
+        <a className={classes.navLink} style={{borderBottom: this.underline('projects')}} href="#projects">projects</a>
+        <a className={classes.navLink} style={{borderBottom: this.underline('home')}} href="#home"><img src={require("./styles/images/cresent.png")}/></a>
+        <a className={classes.navLink} style={{borderBottom: this.underline('articles')}} href="#articles">articles</a>
+        <a className={classes.navLink} style={{borderBottom: this.underline('contact')}} href="#contact">contact</a>
+      </Fragment>
+      )
+  }
+
   render() { 
     const {classes} = this.props
     return (
-      <div className={classes.globalFont}>
-
-        <div className={classes.container} ref={home=> this.homeSection = home} id="home">
-          <Home/>
-          <div className={classes.navSection} style={this.state.route === 'home' ? {display: 'none'} : {}}>
-            <a className={classes.navLink} style={{borderBottom: this.underline('about')}} href="#about">about</a>
-            <a className={classes.navLink} style={{borderBottom: this.underline('projects')}} href="#projects">projects</a>
-            <a className={classes.navLink} style={{borderBottom: this.underline('home')}} href="#home"><img src={require("./styles/images/cresent.png")}/></a>
-            <a className={classes.navLink} style={{borderBottom: this.underline('articles')}} href="#articles">articles</a>
-            <a className={classes.navLink} style={{borderBottom: this.underline('contact')}} href="#contact">contact</a>
-          </div>
-        </div>
-
-        <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About/></div>
-        <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
-        <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles/></div>
-        <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact/></div>
-
+      <div>
+        <Media query='(max-width: 1130px)'>
+          {matches => matches ?
+            <div>
+              <h1>I'm the media query break!</h1>
+            </div>
+            :
+            <div className={classes.globalFont}>
+              <div className={classes.container} ref={home=> this.homeSection = home} id="home">
+                <Home/>
+                <div className={classes.navSection} style={this.state.route === 'home' ? {display: 'none'} : {}}>{this.renderNav()}</div>
+              </div>
+              <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About/></div>
+              <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
+              <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles/></div>
+              <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact/></div>
+            </div>
+          }
+        </Media>
       </div>
     )
   }

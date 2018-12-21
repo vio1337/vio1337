@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
 
 interface Props {classes: any}
 interface State {}
@@ -28,6 +29,10 @@ const styles = createStyles({
 		fontSize: '1.2em',
 		backgroundColor: 'white',
 		letterSpacing: 3,
+	},
+	btn: {
+		marginTop: 30,
+		border: '1px solid rgba(0,0,0,.2)',
 	}
 })
 
@@ -44,6 +49,10 @@ class Home extends Component<Props, State> {
 						<div className={classes.title}>LET</div>
 					</div>
 					<div className={classes.blurb}>curiousity-driven full stack web developer</div>
+					<div className={classes.nameContainer}>
+						<Button href="#about" className={classes.btn} style={{marginRight: 20}}>Learn More</Button>
+						<Button href="#projects" className={classes.btn}>View Projects</Button>
+					</div>
 				</div>
 			</Fragment>
 		)

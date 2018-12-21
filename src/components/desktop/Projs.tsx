@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 
-import { projs } from '../List' 
+import { projs } from '../../List' 
 import ProjCard from './ProjCard'
 
 interface Props {classes: any}

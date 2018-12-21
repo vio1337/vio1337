@@ -53,10 +53,10 @@ class Contact extends Component<Props, State> {
 			<div className={classes.colorBlock1}></div>
 			<div className={classes.colorBlock2}></div>
 			<div className={classes.contactContainer}>
-				<a className={classes.link} href="mailto:violet.wmoon@gmail.com"><img src={require('../styles/images/mail.png')}/></a>
-				<a className={classes.link} href="https://github.com/vio1337"><img src={require('../styles/images/github.png')}/></a>
-				<a className={classes.link} href="https://medium.com/@violetmoon"><img src={require('../styles/images/medium.png')}/></a>
-				<a className={classes.link} href="https://linkedin.com/in/violetmoon"><img src={require('../styles/images/linkedin.png')}/></a>
+				<a className={classes.link} href="mailto:violet.wmoon@gmail.com"><img src={require('../../styles/images/mail.png')}/></a>
+				<a className={classes.link} href="https://github.com/vio1337"><img src={require('../../styles/images/github.png')}/></a>
+				<a className={classes.link} href="https://medium.com/@violetmoon"><img src={require('../../styles/images/medium.png')}/></a>
+				<a className={classes.link} href="https://linkedin.com/in/violetmoon"><img src={require('../../styles/images/linkedin.png')}/></a>
 			</div>
 			<div className={classes.colorBlock3}></div>
 			<div className={classes.colorBlock4}></div>

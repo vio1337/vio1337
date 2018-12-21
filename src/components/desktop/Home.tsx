@@ -45,7 +45,7 @@ class Home extends Component<Props, State> {
 				<div className={classes.homeContainer}>	
 					<div className={classes.nameContainer}>
 						<div className={classes.title}>VI</div>
-						<img className='img' src={require('../styles/images/circle.png')}/>
+						<img className='img' src={require('../../styles/images/circle.png')}/>
 						<div className={classes.title}>LET</div>
 					</div>
 					<div className={classes.blurb}>curiousity-driven full stack web developer</div>

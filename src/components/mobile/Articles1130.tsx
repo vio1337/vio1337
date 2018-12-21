@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 
-import { articles } from '../List'
+import { articles } from '../../List'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
@@ -27,7 +27,7 @@ const styles = createStyles({
   },
 })
 
-class Articles extends Component<Props, State> {
+class Articles1130 extends Component<Props, State> {
 
 	render() {
 		const {classes} = this.props
@@ -52,4 +52,4 @@ class Articles extends Component<Props, State> {
 	}
 }
 
-export default withStyles(styles)(Articles)
+export default withStyles(styles)(Articles1130)

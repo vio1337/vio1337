@@ -3,15 +3,23 @@ import { withStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Media from 'react-media'
 import './styles/App.css'
 import checkVisible from './utils/checkVisible'
+import Drawer from '@material-ui/core/Drawer'
 
-import Home from './components/Home'
-import About from './components/About'
-import Projs from './components/Projs'
-import Articles from './components/Articles'
-import Contact from './components/Contact'
+import Home from './components/desktop/Home'
+import About from './components/desktop/About'
+import Projs from './components/desktop/Projs'
+import Articles from './components/desktop/Articles'
+import Contact from './components/desktop/Contact'
+
+import InnerDrawer from './components/mobile/InnerDrawer'
+import Home1130 from './components/mobile/Home1130'
+import About1130 from './components/mobile/About1130'
+import Projs1130 from './components/mobile/Projs1130'
+import Articles1130 from './components/mobile/Articles1130'
+import Contact1130 from './components/mobile/Contact1130'
 
 interface Props {classes: any}
-interface State {route:string}
+interface State {route:string, drawer:boolean}
 
 const styles = createStyles({
   globalFont: {
@@ -42,12 +50,18 @@ const styles = createStyles({
     textDecoration: 'none',
     color: 'black',
   },
+  drawer: {
+    zIndex: 3,
+    backgroundColor: 'black',
+
+  }
 })
 
 class App extends Component<Props, State> {
 
   state = {
-    route: 'home'
+    route: 'home',
+    drawer: false
   }
 
   homeSection: HTMLDivElement | null = null
@@ -57,20 +71,19 @@ class App extends Component<Props, State> {
   contactSection: HTMLDivElement | null = null
 
   componentDidMount() {
-
-    setInterval(()=>{
-     if (checkVisible(this.contactSection)) {
-        this.setState({route: 'contact'}) 
-      } else if (checkVisible(this.articlesSection, 400)) { 
-        this.setState({route: 'articles'}) 
-      } else if (checkVisible(this.projectsSection, 400)) { 
-        this.setState({route: 'projects'}) 
-      } else if (checkVisible(this.aboutSection, 400)) { 
-        this.setState({route: 'about'}) 
-      } else if (checkVisible(this.homeSection, 400)) { 
-        this.setState({route: 'home'})
-      }
-    }, 300)
+    // setInterval(()=>{
+    //  if (checkVisible(this.contactSection)) {
+    //     this.setState({route: 'contact'}) 
+    //   } else if (checkVisible(this.articlesSection, 400)) { 
+    //     this.setState({route: 'articles'}) 
+    //   } else if (checkVisible(this.projectsSection, 400)) { 
+    //     this.setState({route: 'projects'}) 
+    //   } else if (checkVisible(this.aboutSection, 400)) { 
+    //     this.setState({route: 'about'}) 
+    //   } else if (checkVisible(this.homeSection, 400)) { 
+    //     this.setState({route: 'home'})
+    //   }
+    // }, 300)
   }
 
   handleRoute = (route:string) => this.setState({route})
@@ -87,31 +100,37 @@ class App extends Component<Props, State> {
         <a className={classes.navLink} style={{borderBottom: this.underline('articles')}} href="#articles">articles</a>
         <a className={classes.navLink} style={{borderBottom: this.underline('contact')}} href="#contact">contact</a>
       </Fragment>
-      )
+    )
   }
 
   render() { 
     const {classes} = this.props
     return (
-      <div>
-        <Media query='(max-width: 1130px)'>
-          {matches => matches ?
-            <div>
-              <h1>I'm the media query break!</h1>
-            </div>
-            :
-            <div className={classes.globalFont}>
-              <div className={classes.container} ref={home=> this.homeSection = home} id="home">
-                <Home/>
-                <div className={classes.navSection} style={this.state.route === 'home' ? {display: 'none'} : {}}>{this.renderNav()}</div>
-              </div>
-              <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About/></div>
-              <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
-              <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles/></div>
-              <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact/></div>
-            </div>
-          }
-        </Media>
+        <div className={classes.globalFont}>
+          <Media query='(max-width: 1130px)'>
+            {matches => matches ?
+              <Fragment>
+                <Drawer open={true} variant='persistent' anchor='right' classes={{paper: classes.drawer}}><InnerDrawer nav={this.renderNav()}/></Drawer>
+                <div className={classes.contentContainer}>
+                   <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home1130/></div>
+                   <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About1130/></div>
+                   <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs1130/></div>
+                   <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles1130/></div>
+                   <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact1130/></div>   
+                </div>
+              </Fragment>
+              :
+              <Fragment>
+                <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home/>
+                  <div className={classes.navSection} style={this.state.route === 'home' ? {display: 'none'} : {}}>{this.renderNav()}</div>
+                </div>
+                <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About/></div>
+                <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
+                <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles/></div>
+                <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact/></div>
+              </Fragment>
+            }
+          </Media>
       </div>
     )
   }

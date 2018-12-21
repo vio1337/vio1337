@@ -12,7 +12,6 @@ import Contact from './components/desktop/Contact'
 
 import InnerDrawer from './components/mobile/InnerDrawer'
 import About1130 from './components/mobile/About1130'
-import Projs1130 from './components/mobile/Projs1130'
 import Articles1130 from './components/mobile/Articles1130'
 import Contact1130 from './components/mobile/Contact1130'
 
@@ -124,7 +123,7 @@ class App extends Component<Props, State> {
                 <div className={classes.contentContainer}>
                    <div className={classes.container} ref={home=> this.homeSection = home} id="home"><Home/></div>
                    <div className={classes.container2} ref={about=> this.aboutSection = about} id="about"><About1130/></div>
-                   <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs1130/></div>
+                   <div className={classes.container2} ref={projects=> this.projectsSection = projects} id="projects"><Projs/></div>
                    <div className={classes.container2} ref={articles=> this.articlesSection = articles} id="articles"><Articles1130/></div>
                    <div className={classes.container2} ref={contact=> this.contactSection = contact} id="contact"><Contact1130/></div>   
                 </div>
